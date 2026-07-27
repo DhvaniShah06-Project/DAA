@@ -28,12 +28,11 @@ void sort(int arr[], int size) {
     }
 }
 
-// Function to merge two sorted arrays without extra space
-void mergeArraysWithoutSpace(int a[], int n, int b[], int m) {
-    int i = n - 1; // Pointer at the end of array a[]
-    int j = 0;     // Pointer at the beginning of array b[]
 
-    // Swap elements if an element in a[] is greater than an element in b[]
+void mergeArraysWithoutSpace(int a[], int n, int b[], int m) {
+    int i = n - 1; 
+    int j = 0;    
+
     while (i >= 0 && j < m) {
         if (a[i] > b[j]) {
             int temp = a[i];
@@ -42,13 +41,11 @@ void mergeArraysWithoutSpace(int a[], int n, int b[], int m) {
             i--;
             j++;
         } else {
-            // Since both arrays are already sorted, if a[i] <= b[j],
-            // all remaining elements are in their correct array partitions.
             break;
         }
     }
 
-    // Sort both arrays individually to restore sorted order
+    
     sort(a, n);
     sort(b, m);
 }
@@ -59,7 +56,7 @@ void printArray(int a[],int n){
 }
 
 int main() {
-    // Example 1
+
     int a1[] = {2, 4, 7, 10};
     int b1[] = {2, 3};
     int n1 = sizeof(a1) / sizeof(a1[0]);
@@ -72,7 +69,7 @@ int main() {
     printf("b[] = "); printArray(b1, m1);
     printf("\n");
 
-    // Example 2
+
     int a2[] = {1, 5, 9, 10, 15, 20};
     int b2[] = {2, 3, 8, 13};
     int n2 = sizeof(a2) / sizeof(a2[0]);
