@@ -11,18 +11,20 @@ Explanation: No change in array as there are all 0s*/
 #include <stdio.h>
 
 void moveZerosToEnd(int arr[], int n) {
-    int count = 0;
+    int insertPos = 0;
 
-    
-    for (int i = 0; i < n; i++) {
-        if (arr[i] != 0) {
-            int temp = arr[i];
-            arr[i] = arr[count];
-            arr[count] = temp;
-            
-            count++; 
+    for(int i = 0; i<n;i++){
+        if (arr[i]!=0){
+            arr[insertPos] = arr[i];
+            insertPos++;
         }
     }
+
+    while ((insertPos<n)){
+        arr[insertPos] = 0;
+        insertPos++;
+    }    
+
 }
 
 

@@ -63,7 +63,7 @@ int main()
     // read_array("../Case_2_Avg.txt", 10000);
     // read_array("../Case_2_Worst.txt", 10000);
 
-    read_array("../Case_3_Best.txt", 100000);
-    read_array("../Case_3_Avg.txt", 100000);
-    read_array("../Case_3_Worst.txt", 100000);
+    //read_array("../Case_3_Best.txt", 100000);
+    //read_array("../Case_3_Avg.txt", 100000);
+     read_array("../Case_3_Worst.txt", 100000);
 }

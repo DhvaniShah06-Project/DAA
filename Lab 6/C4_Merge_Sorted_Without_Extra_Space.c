@@ -16,11 +16,14 @@ Explanation: Combined sorted array = [0, 1, 2, 3], array a[] contains smallest 2
 #include <stdio.h>
 #include <stdlib.h>
 
-void sort(int arr[], int size) {
-    for (int i = 1; i < size; i++) {
+void sort(int arr[], int size)
+{
+    for (int i = 1; i < size; i++)
+    {
         int key = arr[i];
         int j = i - 1;
-        while (j >= 0 && arr[j] > key) {
+        while (j >= 0 && arr[j] > key)
+        {
             arr[j + 1] = arr[j];
             j--;
         }
@@ -28,58 +31,72 @@ void sort(int arr[], int size) {
     }
 }
 
+void mergeArraysWithoutSpace(int a[], int n, int b[], int m)
+{
+    int i = n - 1;
+    int j = 0;
 
-void mergeArraysWithoutSpace(int a[], int n, int b[], int m) {
-    int i = n - 1; 
-    int j = 0;    
-
-    while (i >= 0 && j < m) {
-        if (a[i] > b[j]) {
+    while (i >= 0 && j < m)
+    {
+        if (a[i] > b[j])
+        {
             int temp = a[i];
             a[i] = b[j];
             b[j] = temp;
             i--;
             j++;
-        } else {
+        }
+        else
+        {
             break;
         }
     }
 
-    
     sort(a, n);
     sort(b, m);
 }
-void printArray(int a[],int n){
-    for(int i=0;i<n;i++){
-        printf("%d ,",a[i]);
+void printArray(int a[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ,", a[i]);
     }
+    printf("\n");
 }
 
-int main() {
+int main()
+{
 
     int a1[] = {2, 4, 7, 10};
     int b1[] = {2, 3};
     int n1 = sizeof(a1) / sizeof(a1[0]);
     int m1 = sizeof(b1) / sizeof(b1[0]);
 
-    printf("Example 1 Before:\na[] = "); printArray(a1, n1);
-    printf("b[] = "); printArray(b1, m1);
+    printf("Example 1 Before:\na[] = ");
+    printArray(a1, n1);
+    printf("b[] = ");
+    printArray(b1, m1);
     mergeArraysWithoutSpace(a1, n1, b1, m1);
-    printf("Example 1 After:\na[] = "); printArray(a1, n1);
-    printf("b[] = "); printArray(b1, m1);
+    printf("\nExample 1 After:\na[] = ");
+    printArray(a1, n1);
+    printf("b[] = ");
+    printArray(b1, m1);
     printf("\n");
-
 
     int a2[] = {1, 5, 9, 10, 15, 20};
     int b2[] = {2, 3, 8, 13};
     int n2 = sizeof(a2) / sizeof(a2[0]);
     int m2 = sizeof(b2) / sizeof(b2[0]);
 
-    printf("Example 2 Before:\na[] = "); printArray(a2, n2);
-    printf("b[] = "); printArray(b2, m2);
+    printf("Example 2 Before:\na[] = ");
+    printArray(a2, n2);
+    printf("b[] = ");
+    printArray(b2, m2);
     mergeArraysWithoutSpace(a2, n2, b2, m2);
-    printf("Example 2 After:\na[] = "); printArray(a2, n2);
-    printf("b[] = "); printArray(b2, m2);
+    printf("\nExample 2 After:\na[] = ");
+    printArray(a2, n2);
+    printf("b[] = ");
+    printArray(b2, m2);
     printf("\n");
 
     return 0;
